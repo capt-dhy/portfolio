@@ -1,237 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--google site verification-->
-    <meta name="google-site-verification" content="s5CnQN-8O5oN9L3nJnYK4okToLW3xPYCbTzwsgwJjuA" />
-    <title>dhyTech | Junior Fullstack Developer</title>
 
-    <!-- Bootstrap 5 CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dhyTech | Creative Developer</title>
 
-    <!-- Google Fonts - Poppins -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Syncopate:wght@400;700&display=swap"
+    rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!--Custom css-->
-    <link rel="stylesheet" href="style.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    <!--favicon-->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">dhyTech</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto gap-2">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#skills">Skills</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
+<body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="counter">0</div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
+  <!-- 3D Background -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="#" class="logo">DHY<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="#work" class="nav-link">Work</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#contact" class="nav-link highlight">Let's Talk</a>
+    </div>
+    <div class="mobile-menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- Sound Effects -->
+  <audio id="hover-sound" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"
+    preload="auto"></audio>
+  <audio id="click-sound" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3"
+    preload="auto"></audio>
+
+  <!-- Smooth Scoll Wrapper -->
+  <main id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="line glitch" data-text="Digital">Digital</span>
+            <span class="line outline">Alchemist</span>
+          </h1>
+          <p class="hero-subtitle">Crafting immersive digital experiences</p>
         </div>
-      </div>
-    </nav>
+        <div class="scroll-indicator">
+          <span>Scroll</span>
+          <div class="line"></div>
+        </div>
+      </section>
 
-    <!-- Hero -->
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-7">
-            <h1>Junior Fullstack<br />Developer</h1>
-            <p>Building the web, one line of code at a time.</p>
+      <!-- Selected Work (Horizontal) -->
+      <section id="work" class="work-section">
+        <div class="work-header">
+          <h2>Selected Work</h2>
+          <span class="separator"></span>
+          <p>2023 — 2026</p>
+        </div>
+        <div class="work-gallery">
+          <!-- Project 1: E-commerce -->
+          <div class="project-card" data-title="E-commerce Platform" data-tech="React / Node.js / MongoDB"
+            data-description="A full-featured decentralized e-commerce platform featuring real-time inventory tracking, AI-driven product recommendations, and a seamless checkout experience. Built to handle high traffic loads with 99.9% uptime."
+            data-image="project1.jpg">
+            <div class="card-image-wrapper">
+              <div class="card-bg" style="background: linear-gradient(45deg, #ff00cc, #333399);"></div>
+            </div>
+            <div class="card-inner">
+              <span class="project-number">01</span>
+              <h3>E-commerce Platform</h3>
+              <p>React / Node.js</p>
+              <small>Engaging development, vivid realization from wireframes.</small>
+            </div>
           </div>
-          <div class="col-lg-5 text-center">
-            <div class="profile-photo mx-auto">
-              <!-- Replace with your photo: <img src="your-photo.jpg" alt="John Doe"> -->
-              <img src="dhy.jpg" alt="John Doe" />
+
+          <!-- Project 2: Task Manager -->
+          <div class="project-card" data-title="Task Manager App" data-tech="Laravel / Vue.js / MySQL"
+            data-description="A smart productivity tool that uses natural language processing to organize tasks automatically. Features team collaboration workspaces, time tracking, and automated progress reports."
+            data-image="project2.jpg">
+            <div class="card-image-wrapper">
+              <div class="card-bg" style="background: linear-gradient(45deg, #00f3ff, #000000);"></div>
+            </div>
+            <div class="card-inner">
+              <span class="project-number">02</span>
+              <h3>Task Manager App</h3>
+              <p>Laravel / Vue.js</p>
+              <small>Intuitive management with real-time updates.</small>
+            </div>
+          </div>
+
+          <!-- Project 3: Portfolio -->
+          <div class="project-card" data-title="Portfolio Website" data-tech="HTML5 / CSS3 / Three.js / GSAP"
+            data-description="My personal digital garden. A 3D interactive experience showing my journey as a developer. Built with performance and accessibility in mind, featuring custom WebGL shaders and smooth scroll interactions."
+            data-image="dhy.jpg">
+            <div class="card-image-wrapper">
+              <div class="card-bg" style="background: linear-gradient(45deg, #bc13fe, #ff00cc);"></div>
+            </div>
+            <div class="card-inner">
+              <span class="project-number">03</span>
+              <h3>Portfolio Website</h3>
+              <p>HTML / CSS / Bootstrap</p>
+              <small>Fully responsive personal showcase.</small>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- About & Skills -->
-    <section id="about">
-      <div class="container">
-        <div class="row about-skills g-5">
-          <div class="col-lg-6">
+      <!-- About Section (Restored) -->
+      <section id="about" class="about-section">
+        <div class="about-container">
+          <div class="about-text">
             <h2>About Me</h2>
-            <div class="card">
-              <p>
-                I'm a passionate developer with a year of experience in creating
-                responsive and user-friendly web applications. I specialize in
-                JavaScript, React, Node.js, and more.
-              </p>
-              <p>
-                Always eager to learn and tackle new challenges in fullstack
-                development.
-              </p>
-              <a href="#projects" class="btn btn-glow mt-3">View Project</a>
-            </div>
+            <p>I'm a passionate developer with a year of experience in creating responsive and user-friendly web
+              applications. I specialize in JavaScript, React, Node.js, and more. Always eager to learn and tackle new
+              challenges in fullstack development.</p>
+
+            <div id="skills-3d-container"></div>
           </div>
-          <div class="col-lg-6">
-            <h2>Skills</h2>
-            <div class="card">
-              <div class="mb-3"><strong>JavaScript</strong></div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 40%"></div>
-              </div>
-
-              <div class="mb-3"><strong>React</strong></div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 65%"></div>
-              </div>
-
-              <div class="mb-3"><strong>laravel</strong></div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 75%"></div>
-              </div>
-
-              <div class="mb-3"><strong>HTML/CSS</strong></div>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 95%"></div>
-              </div>
-            </div>
+          <div class="about-image">
+            <img src="dhy.jpg" alt="Profile" class="profile-img">
           </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+      <div class="section-header text-center">
+        <h2>Services</h2>
+        <p>What I can do for you</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fas fa-code"></i>
+          <h3>Web Development</h3>
+          <p>Building lightning-fast, responsive websites using modern frameworks like React, Next.js, and Three.js.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-layer-group"></i>
+          <h3>UI/UX Design</h3>
+          <p>Designing intuitive, user-centric interfaces with a focus on aesthetics and seamless interaction.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-rocket"></i>
+          <h3>Performance Opt.</h3>
+          <p>Optimizing applications for maximum speed, accessibility, and SEO ranking.</p>
         </div>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects">
-      <div class="container">
-        <h2 class="text-center mb-5">Projects</h2>
-        <div class="row g-4 justify-content-center">
-          <div class="col-md-6 col-lg-4">
-            <div class="project-card">
-              <div class="project-img">
-                <img
-                  src="https://elements-resized.envatousercontent.com/elements-cover-images/a7999683-0fc8-47c4-93fe-2c136c8384ba?w=1200&h=630&cf_fit=crop&q=85&format=jpeg"
-                  alt="E-commerce Platform"
-                />
-              </div>
-              <div class="p-4">
-                <h5>E-commerce Platform</h5>
-                <p>
-                  Engaging development, vivid realization from wireframes and
-                  optimized cart.
-                </p>
-                <div class="project-icons">
-                  <i class="fab fa-react" title="React"></i>
-                  <i class="fab fa-node-js" title="Node.js"></i>
-                </div>
-                <button class="btn btn-glow">View Project</button>
-              </div>
-            </div>
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+      <div class="section-header">
+        <h2>Experience</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Jan 2026 - Present</div>
+          <div class="timeline-content">
+            <h3>Fullstack Developer</h3>
+            <h4>Freelance</h4>
+            <p>Taking on complex client projects, building full-stack applications with React, Laravel, Node.js. Specializing in creating premium, production-ready solutions.</p>
           </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="project-card">
-              <div class="project-img">
-                <img
-                  src="https://s3-alpha.figma.com/hub/file/2222202228767429720/3f79fe14-6724-4f4c-90a4-f39f75ca92c6-cover.png"
-                  alt="Task Manager App"
-                />
-              </div>
-              <div class="p-4">
-                <h5>Task Manager App</h5>
-                <p>
-                  Intuitive task management with drag-and-drop and real-time
-                  updates.
-                </p>
-                <div class="project-icons">
-                  <i class="fab fa-laravel" title="Laravel"></i>
-                  <i class="fab fa-react" title="Vue.js"></i>
-                </div>
-                <button class="btn btn-glow">View Project</button>
-              </div>
-            </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Aug 2025 - Dec 2025</div>
+          <div class="timeline-content">
+            <h3>Frontend Developer</h3>
+            <h4>Personal Projects & Learning</h4>
+            <p>Built multiple real-world applications: HealthBridge (medical platform), FlexiMeet (meeting scheduler), Daily Expense Tracker. Mastered React, Laravel, and modern web technologies.</p>
           </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="project-card">
-              <div class="project-img">
-                <img
-                  src="https://www.shadcndesign.com/templates/dev-1.png"
-                  alt="Portfolio Website"
-                />
-              </div>
-              <div class="p-4">
-                <h5>Portfolio Website</h5>
-                <p>
-                  Fully responsive personal portfolio showcasing projects and
-                  skills.
-                </p>
-                <div class="project-icons">
-                  <i class="fab fa-html5" title="HTML5"></i>
-                  <i class="fab fa-css3-alt" title="CSS3"></i>
-                  <i class="fab fa-bootstrap" title="Bootstrap"></i>
-                </div>
-                <button class="btn btn-glow">View Project</button>
-              </div>
-            </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Mar 2025 - Jul 2025</div>
+          <div class="timeline-content">
+            <h3>Junior Developer</h3>
+            <h4>Self-Taught & Practice</h4>
+            <p>Deepened knowledge in JavaScript frameworks, backend development with Laravel and Node.js. Started building more complex applications with databases and APIs.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Sep 2024 - Feb 2025</div>
+          <div class="timeline-content">
+            <h3>Started Coding Journey</h3>
+            <h4>Learning Web Development</h4>
+            <p>Began with HTML, CSS, and JavaScript fundamentals. Completed first projects including portfolio sites and basic web applications. Built strong foundation in responsive design.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="text-center py-5">
-      <div class="container">
-        <div class="social-icons mb-4">
-          <a href="https://github.com/capt-dhy"
-            ><i class="fab fa-github"></i
-          ></a>
-          <a href="www.linkedin.com/in/dawood-hassan-882b26340"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-          <a href="https://x.com/dawood_yus92592"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a href=""><i class="fas fa-envelope"></i></a>
+    <footer id="contact">
+      <div class="footer-content">
+        <h2>Have an idea?</h2>
+        <a href="mailto:hello@dhy.tech" class="email-link">dhydevops@gmail.tech</a>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 dhyTech</p>
+        <div class="socials">
+          <a href="https://github.com/capt-dhy" target="_blank">GH</a>
+          <a href="https://www.linkedin.com/in/dawood-hassan-882b26340" target="_blank">LN</a>
+          <a href="https://x.com/dawood_yus92592" target="_blank">TW</a>
         </div>
-        <p class="mb-0 text-secondary">© 2023 dhyTech. All rights reserved.</p>
       </div>
     </footer>
+    </div>
+  </main>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+  <!-- Project Modal Portal -->
+  <div id="project-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-body">
+        <div class="modal-image">
+          <img src="" alt="Project Image">
+        </div>
+        <div class="modal-info">
+          <h2 class="modal-title"></h2>
+          <div class="modal-tech-stack"></div>
+          <p class="modal-description"></p>
+          <div class="modal-links">
+            <a href="#" class="btn-glow">View Live</a>
+            <a href="#" class="btn-outline">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Command Palette -->
+  <div id="command-palette" class="command-palette">
+    <div class="palette-content">
+      <div class="palette-input-wrapper">
+        <span class="prompt">></span>
+        <input type="text" id="palette-input" placeholder="Type a command..." autocomplete="off">
+      </div>
+      <div class="palette-suggestions" id="palette-suggestions">
+        <!-- Suggestions injected via JS -->
+      </div>
+      <div class="palette-footer">
+        <span><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+        <span><kbd>↵</kbd> to select</span>
+        <span><kbd>Esc</kbd> to close</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <!-- Main Script -->
+  <script src="main.js"></script>
+</body>
+
 </html>
