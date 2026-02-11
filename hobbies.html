@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interests | dhyTech</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Syncopate:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
+  <!-- Background -->
+  <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; background: #050505; opacity: 0.9;">
+      <canvas id="webgl-canvas"></canvas> <!-- Reusing canvas if possible, or just a dark bg -->
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">DHY<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="index.html#work" class="nav-link">Work</a>
+      <a href="index.html#about" class="nav-link">About</a>
+      <a href="#" class="nav-link highlight" style="color: var(--primary);">Interests</a>
+    </div>
+    <div class="mobile-menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <main id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <!-- Hero -->
+      <section class="hobby-hero">
+        <h1 class="hero-title" style="font-size: 4rem;">
+            <span class="line glitch" data-text="LEVEL UP">LEVEL UP</span>
+        </h1>
+        <p class="hero-subtitle">Anime. Games. Vibes.</p>
+      </section>
+
+      <!-- Anime Section -->
+      <section id="anime">
+        <div class="section-header text-center" style="margin-bottom: 2rem;">
+            <h2>Anime Watchlist</h2>
+            <p>Top Tier Animations</p>
+        </div>
+        
+        <div class="hobby-grid">
+            <!-- Cards will be injected here by hobbies.js -->
+            <div class="anime-card" style="display: flex; justify-content: center; align-items: center; background: rgba(255,255,255,0.05);">
+                <p style="color: var(--primary);">Loading Anime Data...</p>
+            </div>
+        </div>
+      </section>
+
+      <!-- Games Section -->
+      <section id="games" style="margin-top: 5rem;">
+        <div class="section-header text-center">
+            <h2>Gaming Arena</h2>
+            <p>Current Rotation</p>
+        </div>
+
+        <div class="hobby-grid">
+            <!-- Games will be injected here by hobbies.js -->
+             <div class="anime-card" style="display: flex; justify-content: center; align-items: center; background: rgba(255,255,255,0.05);">
+                <p style="color: var(--secondary);">Loading Games...</p>
+            </div>
+        </div>
+      </section>
+
+      <!-- Meme Section -->
+      <section class="meme-section">
+        <h2 class="glitch" data-text="MOOD">MOOD</h2>
+        <div class="meme-container" id="hakari-trigger" style="cursor: pointer;">
+            <!-- Hakari Image Trigger -->
+            <img src="image.png" alt="Click to Party" style="width: 100%; height: 100%; object-fit: cover;">
+            
+            <!-- Play Overlay -->
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                        background: rgba(188, 19, 254, 0.8); border-radius: 50%; width: 80px; height: 80px;
+                        display: flex; justify-content: center; align-items: center; box-shadow: 0 0 20px rgba(188, 19, 254, 0.6);">
+                <i class="fas fa-play" style="color: white; font-size: 2rem; margin-left: 5px;"></i>
+            </div>
+            
+            <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); 
+                        background: rgba(0,0,0,0.7); padding: 5px 15px; border-radius: 20px; 
+                        color: #fff; font-size: 0.8rem; pointer-events: none;">
+                Click to Party
+            </div>
+        </div>
+        <p style="font-family: 'Space Grotesk'; color: var(--primary); font-size: 1.2rem;">When the code finally works without errors</p>
+      </section>
+
+      <!-- Video Modal -->
+      <div id="video-modal" class="modal">
+        <div class="modal-content" style="max-width: 800px; background: transparent; box-shadow: none; border: none;">
+            <span class="close-modal" id="close-video">&times;</span>
+            <div style="position: relative; padding-top: 56.25%; /* 16:9 Aspect Ratio */">
+                <video id="hakari-video" controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; box-shadow: 0 0 50px rgba(188, 19, 254, 0.5);">
+                    <source src="Hakari dance.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <div class="footer-content">
+          <p>© 2026 dhyTech. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+      <!-- Anime Modal -->
+      <div id="anime-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <div class="modal-body">
+            <div class="modal-image">
+              <img id="modal-img" src="" alt="Anime Cover">
+            </div>
+            <div class="modal-info">
+              <h2 id="modal-title" class="modal-title"></h2>
+              <div id="modal-meta" style="margin-bottom: 1rem; color: var(--primary); font-family: 'Space Grotesk'; display: flex; gap: 1rem; font-size: 0.9rem;"></div>
+              <p id="modal-synopsis" class="modal-description" style="max-height: 200px; overflow-y: auto; color: #ccc; line-height: 1.6; margin-bottom: 2rem; padding-right: 10px;"></p>
+              <div class="modal-links">
+                <a id="modal-watch-link" href="#" target="_blank" class="btn-glow" style="display: inline-block; padding: 10px 25px; border: 1px solid var(--primary); color: var(--primary); text-transform: uppercase; font-family: 'Syncopate'; font-size: 0.8rem; transition: 0.3s; text-decoration: none;">
+                    <i class="fas fa-play" style="margin-right: 8px;"></i> Watch Now
+                </a>
+                <a id="modal-mal-link" href="#" target="_blank" class="btn-outline" style="display: inline-block; padding: 10px 25px; border: 1px solid rgba(255,255,255,0.2); color: #fff; text-transform: uppercase; font-family: 'Syncopate'; font-size: 0.8rem; transition: 0.3s; text-decoration: none; margin-left: 1rem;">
+                    More Info
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  
+  <!-- Hobbies Logic -->
+  <script src="hobbies.js"></script>
+  
+  <script>
+    // Minimal JS for this page
+    const lenis = new Lenis();
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Custom Cursor
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
+
+    window.addEventListener('mousemove', (e) => {
+        const posX = e.clientX;
+        const posY = e.clientY;
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+        cursorOutline.animate({
+            left: `${posX}px`,
+            top: `${posY}px`
+        }, { duration: 500, fill: "forwards" });
+    });
+  </script>
+</body>
+</html>
